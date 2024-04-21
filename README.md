@@ -1,2 +1,1 @@
-# flameroblox.github.io
-The Official Site for FlameX
+# Official Site for Flame
