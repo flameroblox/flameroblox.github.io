@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restricted Access</title>
+</head>
+<body>
+    <h1>This is a restricted access page</h1>
+    <p>This content can only be accessed through the proper link.</p>
+
+    <script>
+
+        if (document.referrer === "" || document.referrer.indexOf("linkvertise.com") === -1) {
+
+            window.location.href = "https://prismteam.vercel.app";
+        }
+    </script>
+</body>
+</html>
