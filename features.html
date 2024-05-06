@@ -77,12 +77,16 @@
             transition: color 0.3s, transform 0.3s;
         }
 
-        /* Card hover effect */
-        .card:hover {
-            transform: translateY(-5px);
-            transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
+/* Card hover effect */
+.card:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 10px 20px rgba(28, 28, 28, 0.7);
+    outline: 1px solid #1c1c1c;
+    background-color: #0c0c0c;
+    color: #fff;
+}
+
 
         /* Jumbotron enhancements */
         .jumbotron {
@@ -116,10 +120,11 @@
         margin: 0; /* Reset any margins */
     }
 
-        /* Semi-transparent card backgrounds */
-        .card {
-            background-color: rgba(44, 44, 46, 0.205);
-        }
+/* Semi-transparent card backgrounds */
+.card {
+    background-color: rgba(12, 12, 12, 0.7);
+    border: 1px solid #1c1c1c;
+}
 
         /* Center align text in Thrive+ section */
         #Thrive-plus .card-body {
