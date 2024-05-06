@@ -77,12 +77,15 @@
             transition: color 0.3s, transform 0.3s;
         }
 
-        /* Card hover effect */
-        .card:hover {
-            transform: translateY(-5px);
-            transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
+/* Card hover effect */
+.card:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 10px 20px rgba(52,52,52,0.2);
+    outline: 1px solid #343434;
+    background-color: #282828;
+    color: #343434;
+}
 
         /* Jumbotron enhancements */
         .jumbotron {
@@ -116,10 +119,11 @@
         margin: 0; /* Reset any margins */
     }
 
-        /* Semi-transparent card backgrounds */
-        .card {
-            background-color: rgba(44, 44, 46, 0.205);
-        }
+/* Semi-transparent card backgrounds */
+.card {
+    background-color: rgba(40, 40, 40, 0.7);
+    border: 1px solid #343434;
+}
 
         /* Left align text in Thrive+ section */
         #Thrive-plus .card-body {
@@ -171,15 +175,15 @@
             margin-top: 2em;
         }
 
-        .btn-platform {
-            font-size: 1.2em;
-            padding: 0.5em 1.5em;
-            border: 2px solid #fff; /* White border */
-            color: #fff; /* White text */
-            background-color: solidt;
-            margin-right: 0.5em;
-            transition: background-color 0.3s ease;
-        }
+.btn-platform {
+    font-size: 1.2em;
+    padding: 0.5em 1.5em;
+    border: 2px solid #343434; /* #343434 for border color */
+    color: #343434; /* #343434 for text color */
+    background-color: #282828; /* #282828 for background color */
+    margin-right: 0.5em;
+    transition: background-color 0.3s ease;
+}
 
         .btn-platform:hover {
             color: #000; /* Dark text on hover */
@@ -325,12 +329,21 @@ a, button, input, textarea {
 
     <!-- Jumbotron / Main Content Area -->
     <div class="jumbotron">
-        <h1>PRISM</h1>
-        <p>The Next-Gen Exploit</p>
+        <h1>Cosmo Exec</h1>
+        <p>Desc</p>
         <div class="button-group">
             <a href="windows.html" class="btn btn-platform">Windows</a>
             <a href="android.html" class="btn btn-platform">Android</a>
-        </div>
+          <p>Made by Prism Team</p>      
+</div>
+
+    <div class="jumbotron2">
+        <h1>CosmoHub</h1>
+        <p>SOON</p>
+        <div class="button-group">
+            <a href="https://keepdreamingtubby" class="btn btn-platform">Script</a>
+          <p>Made by Prism Team</p>      
+</div>
         <!-- More content goes here -->
 
     <!-- Footer -->
