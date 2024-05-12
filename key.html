@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmo.lol Key</title>
+</head>
+<body>
+    <p>You have finished the key system! Click the button below to get your key and then insert it in the key panel.</p>
+    <button onclick="copyKey()">Get Key</button>
+
+    <script>
+        function copyKey() {
+            var key = "CosmoXD";
+            var tempInput = document.createElement("input");
+            tempInput.style = "position: absolute; left: -1000px; top: -1000px";
+            tempInput.value = key;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempInput);
+            alert("Copied key to clipboard: " + key);
+        }
+
+        // Check referrer and redirect if not from lootlabs.com
+        if (document.referrer.indexOf("lootlabs.com") === -1 && document.referrer !== "") {
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>
