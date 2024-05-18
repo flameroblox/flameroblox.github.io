@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access Key Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            transition: background-color 0.3s ease;
+        }
+        body.dark-mode {
+            background-color: #2c2c2c;
+            color: #ffffff;
+        }
+        .access-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .access-container.dark-mode {
+            background-color: #3c3c3c;
+            color: #ffffff;
+        }
+        .access-container h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .access-container label {
+            display: block;
+            margin-bottom: 8px;
+        }
+        .access-container .input-container {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .access-container input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .access-container.dark-mode input {
+            background-color: #555;
+            color: #fff;
+            border-color: #444;
+        }
+        .access-container .toggle-password {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+        .access-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .access-container button:hover {
+            background-color: #45a049;
+        }
+        .access-container.dark-mode button {
+            background-color: #357a38;
+        }
+        .dark-mode-toggle {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 24px;
+        }
+    </style>
+    <script>
+        function handleAccess(event) {
+            event.preventDefault();
+            const accessKey = document.getElementById('access-key').value;
+            const validKey = 'aquainternal';
+
+            if (accessKey === validKey) {
+                window.location.href = `dashboard.html?key=${accessKey}`;
+            } else {
+                alert('Invalid access key. Please try again.');
+            }
+        }
+
+        function togglePasswordVisibility() {
+            const passwordInput = document.getElementById('access-key');
+            const toggleIcon = document.getElementById('toggle-password');
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                toggleIcon.textContent = '🙈';  
+            } else {
+                passwordInput.type = 'password';
+                toggleIcon.textContent = '👁️';  
+            }
+        }
+
+        function toggleDarkMode() {
+            const body = document.body;
+            const container = document.querySelector('.access-container');
+            const toggleButton = document.getElementById('dark-mode-toggle');
+
+            body.classList.toggle('dark-mode');
+            container.classList.toggle('dark-mode');
+
+            if (body.classList.contains('dark-mode')) {
+                toggleButton.textContent = '☀️'; 
+            } else {
+                toggleButton.textContent = '🌙'; 
+            }
+        }
+    </script>
+</head>
+<body>
+    <button id="dark-mode-toggle" class="dark-mode-toggle" onclick="toggleDarkMode()">🌙</button>
+    
+    <div class="access-container">
+        <h2>Enter Access Key</h2>
+        <form onsubmit="handleAccess(event)">
+            <label for="access-key">Public Access Key</label>
+            <div class="input-container">
+                <input type="password" id="access-key" name="access-key" required>
+                <span id="toggle-password" class="toggle-password" onclick="togglePasswordVisibility()">👁️</span>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
