@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kraken Dashboard</title>
-    <link rel="icon" href="background.png" type="image/png">  
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="icon" href="background.png" type="image/png">    
+<title>Kraken</title>
     <style>
         body {
             display: flex;
@@ -14,14 +13,13 @@
             height: 100vh;
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #141414; /* Grey background */
-            color: #ffffff; /* White text */
+            background-color: #141414;
+            color: #ffffff;
             position: relative;
         }
 
         .container {
             text-align: center;
-            position: relative;
         }
 
         .logo {
@@ -31,87 +29,42 @@
         }
 
         .logo img {
-            width: 50px; /* Adjust size as needed */
+            width: 50px;
             height: auto;
             cursor: pointer;
         }
 
         h1 {
-            font-size: 3em; /* Bigger size */
-            margin: 20px 0 10px 0;
-            font-family: 'Montserrat', sans-serif; /* Montserrat font */
-            text-shadow: 0 0 10px #ffffff; /* Stark white glow */
+            font-size: 75px;
+            margin: 20px 0;
+            font-family: 'Montserrat', sans-serif;
+            text-shadow: 0 0 10px #ffffff;
         }
 
-        .dashboard {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            text-align: right;
-        }
-
-        .dashboard-item {
-            margin-bottom: 10px;
-        }
-
-        .card {
-            padding: 20px;
-            background-color: #1a1919; /* Grey button */
-            color: #ffffff; /* White text */
-            border: 2px solid #2e2d2d; /* Light grey border */
-            border-radius: 5px;
+        p {
             font-size: 1em;
-            cursor: pointer;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* White glow */
-            transition: transform 0.3s ease;
-        }
-
-        .card:hover {
-            transform: scale(1.05);
+            margin-bottom: 20px;
+            color: #cccccc;
         }
 
         .button-container {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
             display: flex;
             justify-content: center;
             gap: 10px;
         }
 
-        .server-button {
-            position: absolute;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
+        button {
             padding: 10px 20px;
-            background-color: #1a1919; /* Grey button */
-            color: #ffffff; /* White text */
-            border: 2px solid #2e2d2d; /* Light grey border */
+            background-color: #1a1919;
+            color: #ffffff;
+            border: 2px solid #2e2d2d;
             border-radius: 5px;
             font-size: 1em;
             cursor: pointer;
-            transition: background-color 0.3s ease;
         }
 
-        .server-button:hover {
-            background-color: #333333; /* Darker grey on hover */
-        }
-        
-        .button {
-            padding: 10px 20px;
-            background-color: #1a1919; /* Grey button */
-            color: #ffffff; /* White text */
-            border: 2px solid #2e2d2d; /* Light grey border */
-            border-radius: 5px;
-            font-size: 1em;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .button:hover {
-            background-color: #333333; /* Darker grey on hover */
+        button:hover {
+            background-color: #1a1919;
         }
     </style>
 </head>
@@ -120,25 +73,13 @@
         <img src="logo.png" alt="Logo">
     </div>
     <div class="container">
-        <div class="dashboard">
-            <div class="dashboard-item">
-                <div class="card">Session Timer: <span id="session-timer">0s</span></div>
-            </div>
+        <h1>KRAKEN</h1>
+        <p>The #1 Scripting Utility for the ROBLOX platform</p>
+        <div class="button-container">
+            <button onclick="window.location.href='login.html'">Login</button>
+            <button onclick="window.location.href='discord.html'">Discord</button>
+            <button onclick="window.location.href='index.html'">Purchase</button>
         </div>
     </div>
-    <button class="server-button" onclick="window.location.href='#'">Server</button>
-    <div class="button-container">
-        <button class="button" onclick="window.location.href='#'">PC Exec</button>
-        <button class="button" onclick="window.location.href='#'">Android Exec</button>
-        <button class="button" onclick="window.location.href='#'">KrakenLOL</button>
-    </div>
-    
-    <script>
-        let sessionTimer = 0;
-        setInterval(() => {
-            sessionTimer++;
-            document.getElementById('session-timer').innerText = sessionTimer + 's';
-        }, 1000);
-    </script>
 </body>
 </html>
