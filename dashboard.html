@@ -21,6 +21,7 @@
 
         .container {
             text-align: center;
+            position: relative;
         }
 
         .logo {
@@ -40,8 +41,6 @@
             margin: 20px 0 10px 0;
             font-family: 'Montserrat', sans-serif; /* Montserrat font */
             text-shadow: 0 0 10px #ffffff; /* Stark white glow */
-            display: inline-block;
-            vertical-align: middle;
         }
 
         .dashboard {
@@ -72,13 +71,13 @@
         }
 
         .button-container {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
             display: flex;
             justify-content: center;
             gap: 10px;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
         }
 
         .server-button {
@@ -126,13 +125,13 @@
                 <div class="card">Session Timer: <span id="session-timer">0s</span></div>
             </div>
         </div>
-        <div class="button-container">
-            <button class="button" onclick="window.location.href='#'">PC Exec</button>
-            <button class="button" onclick="window.location.href='#'">Android Exec</button>
-            <button class="button" onclick="window.location.href='#'">KrakenLOL</button>
-        </div>
     </div>
     <button class="server-button" onclick="window.location.href='#'">Server</button>
+    <div class="button-container">
+        <button class="button" onclick="window.location.href='#'">PC Exec</button>
+        <button class="button" onclick="window.location.href='#'">Android Exec</button>
+        <button class="button" onclick="window.location.href='#'">KrakenLOL</button>
+    </div>
     
     <script>
         let sessionTimer = 0;
