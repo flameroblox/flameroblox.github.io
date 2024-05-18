@@ -8,154 +8,60 @@
     <title>Prism Team</title>
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-        <!-- Favicon -->
-        <link rel="icon" href="background.png" type="image/png"> <!-- Uses background.png as the favicon -->
+    <!-- Favicon -->
+    <link rel="icon" href="background.png" type="image/png"> <!-- Uses background.png as the favicon -->
     <!-- Open Graph Protocol meta tags -->
     <meta property="og:title" content="Aqua">
     <meta property="og:description" content="A next generation scripting utility for the ROBLOX platform.">
     <meta property="og:image" content="https://i.imgur.com/8vpg4oM.png">
     <meta property="og:url" content="https://aquarbx.vercel.app">
     <meta property="og:type" content="website">
-</head>
     <!-- Custom CSS -->
     <style>
         body, html {
-            cursor: none;
             background: url('backgroundgig.png') no-repeat center center fixed;
             background-size: cover;
-            color: #f8f9fa;
-            overflow-y: scroll;
             font-family: 'Montserrat', sans-serif;
             height: 100%;
-        }
-		
-		        /* Custom animations added */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            overflow-y: scroll;
         }
 
-        /* Any element you want to fade in on load */
-        .fade-in {
-            animation: fadeIn 2s ease-in-out forwards;
-        }
-
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #1a1a1a;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #0e0e0e;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: #000000;
-        }
-
-        /* Fix for double scrollbar */
-        html {
-            overflow: hidden;
-        }
-
-        body {
-            overflow-y: auto;
-            overflow-x: hidden;
-        }
-
-        /* Custom cursor adjustments */
-        .btn:hover, .nav-link:hover, .navbar-brand:hover {
-            cursor: url('https://i.imgur.com/MRlljnU.png'), auto;
-        }
-
-        /* Navbar animation */
-        .navbar-collapse {
-            transition: transform 0.5s;
-        }
-
-        /* Hover effect for nav links */
-        .nav-link:hover {
-            color: #1940ff !important; /* Arbitrary color for demonstration */
-            transform: scale(1.1);
-            transition: color 0.3s, transform 0.3s;
-        }
-
-/* Card hover effect */
-.card:hover {
-    transform: translateY(-5px);
-    transition: transform 0.3s, box-shadow 0.3s;
-    box-shadow: 0 10px 20px rgba(28, 28, 28, 0.7);
-    outline: 1px solid #1c1c1c;
-    background-color: #0c0c0c;
-    color: #fff;
-}
-
-        /* Jumbotron enhancements */
-        .jumbotron {
-            animation: fadeIn 2s;
-        }
-
-        /* Button hover glow effect */
-        .btn-platform:hover {
-            box-shadow: 0 0 15px #fff;
-            transition: box-shadow 0.3s, color 0.3s;
-        }
-
-        /* Reusable utility for text glow */
-        .text-glow {
-            text-shadow: 0 0 10px #fff;
-        }
-        
-        
-        .custom-cursor {
-        position: fixed;
-        pointer-events: none;
-        z-index: 10000;
-        mix-blend-mode: difference; /* Optional: for a blend effect */
-        transition: opacity 1s ease; /* Transition for smooth fade in/out */
-        display: block; /* Ensures the custom cursor is always shown */
-        transform: translate(-50%, -50%); /* Centers the image on cursor position */
-        background: url('https://i.imgur.com/MRlljnU.png') no-repeat center center;
-        background-size: 32px 32px;
-        width: 32px;
-        height: 32px;
-        margin: 0; /* Reset any margins */
-    }
-
-/* Semi-transparent card backgrounds */
-.card {
-    background-color: rgba(12, 12, 12, 0.7);
-    border: 1px solid #1c1c1c;
-}
-
-        /* Left align text in Thrive+ section */
-        #Thrive-plus .card-body {
-            text-align: left;
-        }
-    
-        .custom-cursor {
-            /* Existing cursor styling */
+        body.light-mode {
+            background: url('backgroundlight.png') no-repeat center center fixed;
+            color: #000;
         }
 
         .navbar {
-            /* Adjusted navbar styling */
-            background-color: #0000005d; /* Dark background */
+            background-color: rgba(0, 0, 0, 0.7);
             padding-top: 0.5rem;
             padding-bottom: 0.5rem;
-            border-radius: 15px;
+        }
+
+        body.light-mode .navbar {
+            background-color: rgba(255, 255, 255, 0.7);
         }
 
         .navbar-brand {
-            color: #fff; /* White color for brand text */
+            color: #fff;
             font-weight: bold;
         }
 
+        body.light-mode .navbar-brand {
+            color: #000;
+        }
+
         .navbar-nav .nav-link {
-            color: #fff; /* White color for nav links */
+            color: #fff;
+        }
+
+        body.light-mode .navbar-nav .nav-link {
+            color: #000;
+        }
+
+        .nav-link:hover {
+            color: #1940ff !important;
+            transform: scale(1.1);
+            transition: color 0.3s, transform 0.3s;
         }
 
         .jumbotron {
@@ -163,6 +69,11 @@
             color: #fff;
             background-color: transparent;
             margin-top: 50px;
+            padding: 2rem;
+        }
+
+        body.light-mode .jumbotron {
+            color: #000;
         }
 
         .jumbotron h1 {
@@ -182,26 +93,69 @@
             margin-top: 2em;
         }
 
-.btn-platform {
-    font-size: 1.2em;
-    padding: 0.5em 1.5em;
-    border: 2px solid #1c1c1c;
-    color: #fff;
-    background-color: #0c0c0c;
-    margin-right: 0.5em;
-    transition: background-color 0.3s ease;
-}
+        .btn-platform {
+            font-size: 1.2em;
+            padding: 0.5em 1.5em;
+            border: 2px solid #1c1c1c;
+            color: #fff;
+            background-color: #0c0c0c;
+            margin-right: 0.5em;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
 
-.btn-platform:hover {
-    background-color: #1c1c1c;
-}
+        body.light-mode .btn-platform {
+            color: #000;
+            background-color: #f8f9fa;
+        }
+
+        .btn-platform:hover {
+            background-color: #1c1c1c;
+            box-shadow: 0 0 15px #fff;
+        }
+
+        body.light-mode .btn-platform:hover {
+            background-color: #e0e0e0;
+            box-shadow: 0 0 15px #000;
+        }
+
+        .custom-cursor {
+            position: fixed;
+            pointer-events: none;
+            z-index: 10000;
+            mix-blend-mode: difference;
+            transition: opacity 1s ease;
+            display: block;
+            transform: translate(-50%, -50%);
+            background: url('https://i.imgur.com/MRlljnU.png') no-repeat center center;
+            background-size: 32px 32px;
+            width: 32px;
+            height: 32px;
+            margin: 0;
+        }
 
         .footer {
-            /* Adjusted footer styling */
             text-align: center;
             color: #9e9e9e;
             padding: 2em 0;
-            background-color: #000; /* Dark background */
+            background-color: #000;
+        }
+
+        body.light-mode .footer {
+            background-color: #f8f9fa;
+            color: #000;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 2s ease-in-out forwards;
         }
 
         .aurora {
@@ -221,48 +175,18 @@
             pointer-events: none;
         }
 
-                /* Set an aurora borealis-inspired gradient background for the entire page */
-                body {
-            background-color: #000;
-            color: #f8f9fa;
-            overflow-y: scroll;
+        @keyframes auroraAnimation {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(100%);
+            }
         }
-        
-                        /* Animation for the aurora borealis effect */
-		.aurora {
-			overflow: hidden; /* Prevents horizontal scrollbar */
-			position: fixed; /* Ensures the aurora is relative to the viewport */
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			width: 100%; /* Full width of the viewport */
-			height: 100%; /* Full height of the viewport */
-			box-sizing: border-box;
-			border-width: 0px;
-			border-style: solid;
-			border-color: rgb(229, 231, 235);
-			animation: auroraAnimation 15s infinite linear;
-			pointer-events: none; /* Allows clicks to pass through */
-		}
 
-		/* Keyframes for the aurora borealis animation */
-		@keyframes auroraAnimation {
-			0% {
-				transform: translateX(-100%);
-			}
-			100% {
-				transform: translateX(100%);
-			}
-		}
-
-        /* Hide the default cursor on all interactive elements */
-a, button, input, textarea {
-    cursor: none !important;
-}
-
-
-        /* Additional styles based on the image will go here */
+        a, button, input, textarea {
+            cursor: none !important;
+        }
     </style>
     <!-- Google Fonts - Montserrat -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
@@ -273,7 +197,7 @@ a, button, input, textarea {
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html">
                 <img src="logo.png" alt="PRISM Logo" class="logo-img" style="height: 30px; width: auto; margin-right: 10px;">
-                Aqua <!-- Text next to the logo -->
+                Aqua
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -296,52 +220,65 @@ a, button, input, textarea {
                     </li>
                 </ul>
             </div>
+            <button class="btn btn-secondary" id="mode-toggle">Toggle Mode</button>
         </div>
     </nav>
-</body>
 
+    <div class="jumbotron fade-in">
+        <h1>Cosmo</h1>
+        <p>The upcoming exploit developed by PrismTeam</p>
+        <div class="button-group">
+            <a href="windows.html" class="btn btn-platform">Windows</a>
+            <a href="android.html" class="btn btn-platform">Android</a>
+            <a href="discord.html" class="btn btn-platform">Server</a>
+        </div>
+    </div>
 
+    <div class="footer">
+        <p>© 2024 Prism Team. All rights reserved.</p>
+    </div>
+
+    <div class="aurora"></div>
 
     <script>
         // Initial cursor state
         var cursorOpacity = 0;
-        
+
         // Create the custom cursor element
         var customCursor = document.createElement('div');
         customCursor.classList.add('custom-cursor');
         document.body.appendChild(customCursor);
-      
+
         // Update cursor position and visibility on mouse move
         document.addEventListener('mousemove', function(e) {
-          customCursor.style.left = e.pageX + 'px';
-          customCursor.style.top = e.pageY + 'px';
-          cursorOpacity = 1; // Make cursor visible
-          customCursor.style.opacity = cursorOpacity;
+            customCursor.style.left = e.pageX + 'px';
+            customCursor.style.top = e.pageY + 'px';
+            cursorOpacity = 1; // Make cursor visible
+            customCursor.style.opacity = cursorOpacity;
         });
-      
+
         // Apply motion trail effect
-        document.addEventListener('mousemove', function(e) {
-          setTimeout(function() {
-            customCursor.style.opacity = 0; // Fade out cursor
-          }, 2000); // Adjust time for longer trail
+        document.addEventListener('mousemove', function() {
+            setTimeout(function() {
+                customCursor.style.opacity = 0; // Fade out cursor
+            }, 2000); // Adjust time for longer trail
         });
-      
+
         // Set the custom cursor image
         customCursor.style.backgroundImage = "url('https://i.imgur.com/MRlljnU.png')";
         customCursor.style.backgroundSize = "32px 32px"; // Size of the cursor image
         customCursor.style.width = "32px";
         customCursor.style.height = "32px";
-      </script>
 
-    <!-- Jumbotron / Main Content Area -->
-    <div class="jumbotron">
-        <h1>Cosmo</h1>
-        <p>The upcoming exploit developed by PrismTeam</p>
-        <div class="button-group">
-            <a href="windows.html" class="btn btn-platform">Windows</a>
-            <a href="android.html" class="btn btn-platform">Android</a>    
-            <a href="discord.html" class="btn btn-platform">Server</a>    
-</div>
+        // Toggle dark mode and light mode
+        const toggleButton = document.getElementById('mode-toggle');
+        const body = document.body;
+
+        toggleButton.addEventListener('click', function() {
+            body.classList.toggle('light-mode');
+        });
+    </script>
+
     <!-- Bootstrap 5 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
