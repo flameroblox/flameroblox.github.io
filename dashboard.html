@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page</title>
+    <title>Kraken Dashboard</title>
+    <link rel="icon" href="background.png" type="image/png">  
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         body {
@@ -25,7 +26,7 @@
         .logo {
             position: absolute;
             top: 20px;
-            right: 20px; /* Changed to top right */
+            left: 20px;
         }
 
         .logo img {
@@ -39,21 +40,15 @@
             margin: 20px 0 10px 0;
             font-family: 'Montserrat', sans-serif; /* Montserrat font */
             text-shadow: 0 0 10px #ffffff; /* Stark white glow */
-        }
-
-        p {
-            font-size: 1em;
-            margin-bottom: 20px;
-            color: #cccccc; /* Light grey text */
+            display: inline-block;
+            vertical-align: middle;
         }
 
         .dashboard {
             position: absolute;
             top: 20px;
-            left: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
+            right: 20px;
+            text-align: right;
         }
 
         .dashboard-item {
@@ -81,9 +76,9 @@
             justify-content: center;
             gap: 10px;
             position: absolute;
-            bottom: 20px;
+            top: 50%;
             left: 50%;
-            transform: translateX(-50%);
+            transform: translate(-50%, -50%);
         }
 
         .server-button {
@@ -125,8 +120,8 @@
     <div class="logo" onclick="window.location.href='index.html'">
         <img src="logo.png" alt="Logo">
     </div>
+    <h1>Kraken!</h1>
     <div class="container">
-        <h1>Kraken!</h1>
         <div class="dashboard">
             <div class="dashboard-item">
                 <div class="card">Session Timer: <span id="session-timer">0s</span></div>
