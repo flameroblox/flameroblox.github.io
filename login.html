@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Access Key Page</title>
+    <title>Kraken Auth</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,24 +12,26 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #f0f0f0;
-            transition: background-color 0.3s ease;
-        }
-        body.dark-mode {
-            background-color: #2c2c2c;
-            color: #ffffff;
+            background-color: #2c2c2c; /* Set dark mode as default background color */
+            color: #ffffff; /* Set default text color */
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
         .access-container {
-            background-color: white;
+            background-color: #3c3c3c; /* Set dark mode as default background color */
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             width: 300px;
+            color: #ffffff; /* Set default text color */
             transition: background-color 0.3s ease, color 0.3s ease;
         }
-        .access-container.dark-mode {
-            background-color: #3c3c3c;
-            color: #ffffff;
+        body.light-mode {
+            background-color: #f0f0f0;
+            color: #000000;
+        }
+        .access-container.light-mode {
+            background-color: #ffffff;
+            color: #000000;
         }
         .access-container h2 {
             margin-bottom: 20px;
@@ -50,11 +52,6 @@
             border-radius: 4px;
             box-sizing: border-box;
         }
-        .access-container.dark-mode input {
-            background-color: #555;
-            color: #fff;
-            border-color: #444;
-        }
         .access-container .toggle-password {
             position: absolute;
             top: 50%;
@@ -74,8 +71,8 @@
         .access-container button:hover {
             background-color: #45a049;
         }
-        .access-container.dark-mode button {
-            background-color: #357a38;
+        .light-mode .access-container button {
+            background-color: #4CAF50;
         }
         .dark-mode-toggle {
             position: absolute;
@@ -91,7 +88,7 @@
         function handleAccess(event) {
             event.preventDefault();
             const accessKey = document.getElementById('access-key').value;
-            const validKey = 'aquainternal';
+            const validKey = 'krakening';
 
             if (accessKey === validKey) {
                 window.location.href = `dashboard.html?key=${accessKey}`;
@@ -117,13 +114,13 @@
             const container = document.querySelector('.access-container');
             const toggleButton = document.getElementById('dark-mode-toggle');
 
-            body.classList.toggle('dark-mode');
-            container.classList.toggle('dark-mode');
+            body.classList.toggle('light-mode'); // Toggle light mode instead of dark mode
+            container.classList.toggle('light-mode'); // Toggle light mode instead of dark mode
 
-            if (body.classList.contains('dark-mode')) {
-                toggleButton.textContent = '☀️'; 
-            } else {
+            if (body.classList.contains('light-mode')) {
                 toggleButton.textContent = '🌙'; 
+            } else {
+                toggleButton.textContent = '☀️'; 
             }
         }
     </script>
@@ -132,9 +129,9 @@
     <button id="dark-mode-toggle" class="dark-mode-toggle" onclick="toggleDarkMode()">🌙</button>
     
     <div class="access-container">
-        <h2>Enter Access Key</h2>
+        <h2>Enter your license.</h2>
         <form onsubmit="handleAccess(event)">
-            <label for="access-key">Public Access Key</label>
+            <label for="access-key">KrakenAuthenticationServer</label>
             <div class="input-container">
                 <input type="password" id="access-key" name="access-key" required>
                 <span id="toggle-password" class="toggle-password" onclick="togglePasswordVisibility()">👁️</span>
