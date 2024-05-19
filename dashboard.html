@@ -74,6 +74,29 @@
             background-color: #333333; /* Darker grey on hover */
         }
 
+        .session-info {
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%);
+            width: 300px;
+            height: 300px;
+            overflow-y: auto;
+            border: 2px solid #2e2d2d;
+            border-radius: 5px;
+            padding: 10px;
+            background-color: #1a1919; /* Grey button */
+            color: #ffffff; /* White text */
+        }
+
+        .session-info h2 {
+            margin-top: 0;
+        }
+
+        .session-info p {
+            margin-bottom: 10px;
+        }
+
         .button-container {
             position: absolute;
             bottom: 20px;
@@ -124,6 +147,15 @@
         <img src="logo.png" alt="Logo">
     </div>
     <div class="container">
+        <div class="session-info">
+            <h2>Session Information</h2>
+            <p>User: John Doe</p>
+            <p>IP Address: 192.168.1.1</p>
+            <p>Browser: Chrome</p>
+            <p>OS: Windows 10</p>
+            <p>Session Time: 00:15:30</p>
+            <p>Last Activity: 2024-05-20 13:45:20</p>
+        </div>
         <div class="changelog">
             <h2>Changelog</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam accumsan tincidunt risus, ut vestibulum velit condimentum non. Integer semper metus nec magna feugiat, sed ultricies mauris rutrum. Nulla euismod libero vel convallis fermentum.</p>
