@@ -43,31 +43,35 @@
             text-shadow: 0 0 10px #ffffff;
         }
 
-        .dashboard {
+        .changelog {
             position: absolute;
-            bottom: 20px;
-            left: 20px;
-            text-align: left;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+            height: 300px;
+            overflow-y: auto;
+            border: 2px solid #2e2d2d;
+            border-radius: 5px;
+            padding: 10px;
+            background-color: #1a1919; /* Grey button */
+            color: #ffffff; /* White text */
         }
 
-        .dashboard-item {
-            margin-bottom: 10px;
-        }
-
-        .card {
-            padding: 20px;
+        .mark-as-read {
+            margin-top: 10px;
+            padding: 5px 10px;
             background-color: #1a1919; /* Grey button */
             color: #ffffff; /* White text */
             border: 2px solid #2e2d2d; /* Light grey border */
             border-radius: 5px;
             font-size: 1em;
             cursor: pointer;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* White glow */
-            transition: transform 0.3s ease;
+            transition: background-color 0.3s ease;
         }
 
-        .card:hover {
-            transform: scale(1.05);
+        .mark-as-read:hover {
+            background-color: #333333; /* Darker grey on hover */
         }
 
         .button-container {
@@ -120,10 +124,13 @@
         <img src="logo.png" alt="Logo">
     </div>
     <div class="container">
-        <div class="dashboard">
-            <div class="dashboard-item">
-                <div class="card">Session Timer: <span id="session-timer">0s</span></div>
-            </div>
+        <div class="changelog">
+            <h2>Changelog</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam accumsan tincidunt risus, ut vestibulum velit condimentum non. Integer semper metus nec magna feugiat, sed ultricies mauris rutrum. Nulla euismod libero vel convallis fermentum.</p>
+            <p>Integer tristique magna sit amet felis laoreet, et iaculis purus mattis. Suspendisse potenti. Fusce vitae sem eros. Vestibulum dapibus fringilla sapien, a lobortis nunc faucibus id. Vivamus at odio nisl.</p>
+            <p>Vestibulum tempus tellus quis velit semper, non accumsan nunc hendrerit. Curabitur aliquet ipsum eget nisi condimentum, sit amet fermentum felis fringilla. Duis ut velit vitae tortor ultricies gravida et et lectus.</p>
+            <p>Phasellus tincidunt lacus sed metus varius, ac pharetra turpis tincidunt. Suspendisse ultricies nibh id dolor posuere, nec ultrices orci placerat. Integer ac nibh non justo pharetra egestas. Donec nec sodales ex.</p>
+            <button class="mark-as-read">Mark as Read</button>
         </div>
     </div>
     <button class="server-button" onclick="window.location.href='#'">Server</button>
@@ -132,13 +139,5 @@
         <button class="button" onclick="window.location.href='#'">Android Exec</button>
         <button class="button" onclick="window.location.href='#'">KrakenLOL</button>
     </div>
-    
-    <script>
-        let sessionTimer = 0;
-        setInterval(() => {
-            sessionTimer++;
-            document.getElementById('session-timer').innerText = sessionTimer + 's';
-        }, 1000);
-    </script>
 </body>
 </html>
