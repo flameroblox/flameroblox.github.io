@@ -111,8 +111,8 @@
                     return response.text();
                 })
                 .then(data => {
-                    const users = data.split('\n').map(user => atob(user.trim()));
-                    if (users.includes(inputUsername)) {
+                    const decodedData = data.split('\n').map(user => atob(user.trim()));
+                    if (decodedData.includes(inputUsername)) {
                         window.location.href = 'dashboard.html';
                     } else {
                         document.getElementById('error-message').innerText = 'User not found';
