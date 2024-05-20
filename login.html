@@ -3,141 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kraken Auth</title>
+    <title>Login Page</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #2c2c2c; /* Set dark mode as default background color */
-            color: #ffffff; /* Set default text color */
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-        .access-container {
-            background-color: #3c3c3c; /* Set dark mode as default background color */
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 300px;
-            color: #ffffff; /* Set default text color */
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-        body.light-mode {
-            background-color: #f0f0f0;
-            color: #000000;
-        }
-        .access-container.light-mode {
-            background-color: #ffffff;
-            color: #000000;
-        }
-        .access-container h2 {
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        .access-container label {
-            display: block;
-            margin-bottom: 8px;
-        }
-        .access-container .input-container {
-            position: relative;
-            margin-bottom: 20px;
-        }
-        .access-container input {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-        .access-container .toggle-password {
-            position: absolute;
-            top: 50%;
-            right: 10px;
-            transform: translateY(-50%);
-            cursor: pointer;
-        }
-        .access-container button {
-            width: 100%;
-            padding: 10px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        .access-container button:hover {
-            background-color: #45a049;
-        }
-        .light-mode .access-container button {
-            background-color: #4CAF50;
-        }
-        .dark-mode-toggle {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-size: 24px;
-        }
+        body{display:flex;justify-content:center;align-items:center;height:100vh;margin:0;font-family:Arial,sans-serif;background-color:#141414;color:#fff;position:relative}.login-box{background-color:#1a1919;padding:20px;border-radius:10px;box-shadow:0 0 10px #000;width:300px;display:flex;justify-content:center;align-items:center}.input-group{margin-bottom:15px;position:relative;display:flex;align-items:center}.input-group label{display:block;font-size:14px;margin-bottom:5px;color:#ccc}.input-group input{width:calc(100% - 40px);padding:10px;border:1px solid #2e2d2d;border-radius:5px;background-color:#333;color:#fff;flex:1}.toggle-visibility{cursor:pointer;font-size:20px}.toggle-visibility:hover{color:#ccc}.button{width:100%;padding:10px;background-color:#1a1919;color:#fff;border:2px solid #2e2d2d;border-radius:5px;font-size:1em;cursor:pointer}.button:hover{background-color:#333}
     </style>
-    <script>
-        function handleAccess(event) {
-            event.preventDefault();
-            const accessKey = document.getElementById('access-key').value;
-            const validKey = 'krakening';
-
-            if (accessKey === validKey) {
-                window.location.href = `dashboard.html?key=${accessKey}`;
-            } else {
-                alert('Invalid access key. Please try again.');
-            }
-        }
-
-        function togglePasswordVisibility() {
-            const passwordInput = document.getElementById('access-key');
-            const toggleIcon = document.getElementById('toggle-password');
-            if (passwordInput.type === 'password') {
-                passwordInput.type = 'text';
-                toggleIcon.textContent = '🙈';  
-            } else {
-                passwordInput.type = 'password';
-                toggleIcon.textContent = '👁️';  
-            }
-        }
-
-        function toggleDarkMode() {
-            const body = document.body;
-            const container = document.querySelector('.access-container');
-            const toggleButton = document.getElementById('dark-mode-toggle');
-
-            body.classList.toggle('dark-mode'); // Toggle light mode instead of dark mode
-            container.classList.toggle('light-mode'); // Toggle light mode instead of dark mode
-
-            if (body.classList.contains('light-mode')) {
-                toggleButton.textContent = '🌙'; 
-            } else {
-                toggleButton.textContent = '☀️'; 
-            }
-        }
-    </script>
 </head>
 <body>
-    <button id="dark-mode-toggle" class="dark-mode-toggle" onclick="toggleDarkMode()">🌙</button>
-    
-    <div class="access-container">
-        <h2>Enter your license.</h2>
-        <form onsubmit="handleAccess(event)">
-            <label for="access-key">KrakenAuthenticationServer</label>
-            <div class="input-container">
-                <input type="password" id="access-key" name="access-key" required>
-                <span id="toggle-password" class="toggle-password" onclick="togglePasswordVisibility()">👁️</span>
+    <div class="login-box">
+        <form id="loginForm">
+            <div class="input-group">
+                <label for="username">License:</label>
+                <input type="password" id="username" name="username" required>
+                <span class="toggle-visibility" onclick="toggleVisibility()">🙈</span>
             </div>
-            <button type="submit">Submit</button>
+            <button type="submit">Login</button>
         </form>
     </div>
+
+    <script>
+        function toggleVisibility() {
+            const usernameInput = document.getElementById('username');
+            const toggleIcon = document.querySelector('.toggle-visibility');
+            if (usernameInput.type === 'password') {
+                usernameInput.type = 'text';
+                toggleIcon.textContent = '👁️';
+            } else {
+                usernameInput.type = 'password';
+                toggleIcon.textContent = '🙈';
+            }
+        }
+
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const inputUsername = document.getElementById('username').value.trim();
+
+            const encodedURL = 'aHR0cHM6Ly9yYXcuZ2l0aHViLmNvbS9oeXBlcmlvbmxhd2wvS3Jha2VuQXV0aC9vcmdpbmF0aW9uL0tleURCL0F1dGgudHh0P3Rva2VuPUdIU0FUMEFBQUFBQ1JJWVZHREdYV0VVS09XQkY3STQ1NU1aU0xKN1JRIQ==';
+            const decodedURL = atob(encodedURL);
+            fetch(decodedURL)
+                .then(response => response.text())
+                .then(data => {
+                    const users = data.split('\n').map(user => atob(user.trim()));
+                    if (users.includes(inputUsername)) {
+                        window.location.href = 'dashboard.html';
+                    } else {
+                        alert('User not found');
+                    }
+                })
+                .catch(error => console.error('Error fetching user data:', error));
+        });
+    </script>
 </body>
 </html>
