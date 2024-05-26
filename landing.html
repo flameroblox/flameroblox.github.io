@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kraken Landing Test</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">    
+<style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background: url('https://i.imgur.com/qG3lDGu.png') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            text-align: center;
+        }
+        header {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+        }
+        h1 {
+            font-size: 5em;
+            margin: 0.2em 0;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.7);
+        }
+        h2 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.7);
+        }
+        p {
+            font-size: 2.3em;
+            margin: 0.5em 0 1.5em;
+        }
+        a {
+            margin: 0 1em;
+            padding: 0.5em 1em;
+            font-size: 1.2em;
+            text-decoration: none;
+            color: white;
+            border: 2px solid white;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        a:hover {
+            background-color: white;
+            color: black;
+        }
+        .content-section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .content-section .features {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .content-section .feature {
+            flex: 1 1 200px;
+            max-width: 200px;
+            background: rgba(0, 0, 0, 0.1);
+            border: 2px solid white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: left;
+        }
+        .content-section .feature h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .content-section .feature h3 .material-icons {
+            font-size: 1.5em;
+            margin-right: 10px;
+        }
+        .content-section .feature p {
+            font-size: 1em;
+        }
+        footer {
+            margin-top: 20px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Kraken</h1>
+        <p>A premium executor</p>
+        <div>
+            <a href="#">Join Us</a>
+            <a href="#">Download</a>
+        </div>
+    </header>
+    <section class="content-section">
+        <h2>WHY CHOOSE US?</h2>
+        <div class="features">
+            <div class="feature">
+                <h3><i class="material-icons">code</i> Custom DLL</h3>
+                <p>Kraken has a superior DLL which allows for flawless execution.</p>
+            </div>
+            <div class="feature">
+                <h3><i class="material-icons">desktop_windows</i> GUI</h3>
+                <p>Kraken's flawless interface allows for clear use.</p>
+            </div>
+            <div class="feature">
+                <h3><i class="material-icons">security</i> Security</h3>
+                <p>Kraken is always up to date so you won't be detected by Roblox.</p>
+            </div>
+            <div class="feature">
+                <h3><i class="material-icons">people</i> Community</h3>
+                <p>Our community-driven server offers dedicated support and members who support each other.</p>
+            </div>
+        </div>
+        <footer>
+            © 2024 Kraken Softworks. All rights reserved.
+        </footer>
+    </section>
+</body>
+</html>
